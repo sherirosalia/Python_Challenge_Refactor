@@ -21,7 +21,7 @@ with open(election_data) as election_data:
     readCSV = csv.reader(election_data, delimiter=',')
     # Read the header
     header = next(readCSV)
-    print('The headers are: {header}')
+    print(f'The headers are: {header}')
     
     #loop through data to append dictionaries
     for row in readCSV:
