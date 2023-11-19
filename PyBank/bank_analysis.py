@@ -21,8 +21,9 @@ monthly_change_month_and_amount_dicts = []
 
 # exit()
 
-# bank_data = os.path.join("03-Python/Starter_Code/PyBank/Resources/budget_data.csv")
-bank_data = os.path.join("Resources", "budget_data.csv")
+bank_data = "PyBank/Resources/budget_data.csv"
+# bank_data = os.path.join("Resources", "budget_data.csv")
+
 with open(bank_data) as csvfile:
     reader = csv.DictReader(csvfile)
 
@@ -142,5 +143,19 @@ with open(bank_data) as csvfile:
  
     # print(f'Total net profit: {total_net_profits}')
 
+    analysis_data = (
+    f"Financial Analysis\n"
+    f"----------------------------\n"
+    f"Total Months: {count_of_months}\n"
+    f"Total: ${total_profit_loss}\n"
+    f"Average Change: ${average_net_change:.2f}\n"
+    f"Greatest Increase in Profits: {pertinant_date} (${greatest_monthly_increase})\n"
+    f"Greatest Decrease in Profits: {pertinant_date} (${greatest_monthly_decrease})\n"
+    f"Standard Deviation: {standard_deviation}"
+    )
+    output_file = "analysis.txt"
+    with open(output_file, "w") as analysis_to_write:
+        analysis_to_write.write(analysis_data)
 
+ 
 

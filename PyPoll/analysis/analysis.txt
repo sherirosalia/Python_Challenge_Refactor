@@ -1,0 +1,10 @@
+ELECTION RESULTS:
+*******************************************
+total votes for all candidates: 369711
+*******************************************
+The winner of the election based on popular vote is:Diana DeGette with 272892 in vote count 
+*******************************************
+The breakdown of votes for all candidates: 
+Raymon Anthony Doane: 3.139% (11606)
+Charles Casper Stockham: 23.049% (85213)
+Diana DeGette: 73.812% (272892)
