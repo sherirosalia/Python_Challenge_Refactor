@@ -1,7 +1,8 @@
 import os
 import csv
-
+''' requirements for the latest iteration of python challenge does not require inclusion of county data, only the winning votes (2023)'''
 '''
+PROMPT ASKS FOR:
 The total number of votes cast
 A complete list of candidates who received votes
 The percentage of votes each candidate won
@@ -29,7 +30,7 @@ with open(poll_data, 'r') as election_data:
         # print(row)
         total_number_of_votes_cast+=1
         candidate = row[2]
-        county = row[1]
+        # county = row[1]
         
         if candidate not in candidate_list:
             candidate_list.append(candidate)
@@ -39,8 +40,12 @@ with open(poll_data, 'r') as election_data:
         else:
             
             candidate_dict[candidate] +=1 
+
+print("first candidate dictionary not sorted: --- ", candidate_dict)
 candidate_dict = sorted(candidate_dict.items(), key=lambda x:x[1])
+print("second candidate dictionary sorted: ---" ,candidate_dict)
 winning_candidate=candidate_dict[-1][0]
+print("winning candidate:  --", winning_candidate)
 winning_candidate_votes =candidate_dict[-1][1]
 
 with open(analysis_file, "w") as analysis_txt:
@@ -69,15 +74,6 @@ with open(analysis_file, "w") as analysis_txt:
         analysis_txt.write(candidate_voting_totals)
 
 
-    # analysis_data = (
-    #     f'ELECTION RESULTS:\n'
-    #     f'*******************************************\n'
-    #     f'total votes for all candidates: {total_number_of_votes_cast}\n'
-    #     f'*******************************************\n'
-    #     f'The winner of the election based on popular vote is {winning_candidate} with {winning_candidate_votes} in vote count \n'
-    # )
-
-    # analysis_txt.write(analysis_data)
 
 
 
