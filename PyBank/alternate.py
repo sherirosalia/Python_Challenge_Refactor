@@ -1,5 +1,5 @@
 import csv
-import numpy as np
+
 
 total_profit_loss = 0
 count_of_months=0
@@ -58,16 +58,25 @@ with open(bank_data) as csvfile:
             date=row['Date']
             # print('lowest value  ' ,date, ' ' ,lowest_value)
             lowest__month_change = f'The month with lowest net change is: {date} and the amount is: {lowest_value}'
-    # print(highest_value, ' ', lowest_value)
-
-        
+    # print(highest_value, ' ', lowest_value)    
         
 
-        # exit()
-print(total_profit_loss)
-print(lowest__month_change)
-print(sum(net_change_list)/len(net_change_list))
+# print(total_profit_loss)
+# print(lowest__month_change)
+average_net_change =sum(net_change_list)/len(net_change_list)
+# print(average_net_change)
 
-print(highest_month_change)
+# print(highest_month_change)
 
 # print(count_of_months, first_row_value['Profit/Losses'])
+
+analysis_metrics = (f"Financial Analysis\n"
+    f"----------------------------\n"
+    f"Total number of months: {count_of_months} \n"
+    f"Total profit/loss: {total_profit_loss} \n"
+    f" {highest_month_change} \n"
+    f" {lowest__month_change}\n"
+    f" The average net change is: {average_net_change:.2f} \n")
+output_file = "analysis_metrics.txt"
+with open(output_file, "w") as analysis_to_write:
+    analysis_to_write.write(analysis_metrics)

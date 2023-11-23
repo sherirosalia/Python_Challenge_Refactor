@@ -1,0 +1,7 @@
+Financial Analysis
+----------------------------
+Total number of months: 86 
+Total profit/loss: 22564198 
+ The month with highest net change is: Feb-14 and the amount is: 1825558 
+ The month with lowest net change is: Aug-16 and the amount is: -1862002
+ The average net change is: 8311.11 
